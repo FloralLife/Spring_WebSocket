@@ -2,10 +2,20 @@ package com.example.WebSocketTest;
 
 import lombok.*;
 
-@Getter @Setter
+import java.sql.Date;
+
+@Getter
+@Setter
 @NoArgsConstructor
-@RequiredArgsConstructor
 public class HelloMessage {
-    @NonNull
     private String name;
+    private String content;
+    private Date date;
+
+    @Builder
+    public HelloMessage(String name, String content, Date date) {
+        this.name = name;
+        this.content = content;
+        this.date = date;
+    }
 }
